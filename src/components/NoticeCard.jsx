@@ -26,22 +26,24 @@ const handleDelete = async () => {
 
   const color = categoryColors[notice.category] || '#14b8a6'
   const emoji = categoryEmoji[notice.category] || '📌'
-
-  return (
-    <div className="card" style={{ borderLeft: `5px solid ${color}` }}>
-      <div className="card-header">
-       <span className="badge" style={{ 
-  background: color, 
-  color: notice.category === 'Event' ? '#78350f' : 'white' 
-}}>
-  {emoji} {notice.category}
-</span>
-      </div>
-      <h3>{notice.title}</h3>
-      <p>{notice.body}</p>
-      <div className="card-footer">
-        <span className="card-meta">🕐 {new Date(notice.created_at).toLocaleString()}</span>
-      </div>
+return (
+  <div className="card" style={{ borderLeft: `5px solid ${color}` }}>
+    <div className="card-header">
+      <span className="badge" style={{ 
+        background: color, 
+        color: notice.category === 'Event' ? '#78350f' : 'white' 
+      }}>
+        {emoji} {notice.category}
+      </span>
+      {canDelete && (
+        <button className="btn-delete" onClick={handleDelete} title="Delete notice">🗑️</button>
+      )}
     </div>
-  )
+    <h3>{notice.title}</h3>
+    <p>{notice.body}</p>
+    <div className="card-footer">
+      <span className="card-meta">🕐 {new Date(notice.created_at).toLocaleString()}</span>
+    </div>
+  </div>
+)
 }
