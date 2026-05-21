@@ -2,7 +2,7 @@ import { supabase } from '../supabaseClient'
 
 const categoryColors = {
   Academic: '#3b82f6',
-  Event: '#8b5cf6',
+  Event: '#f5c842',
   Urgent: '#ef4444',
   General: '#14b8a6'
 }
@@ -30,12 +30,12 @@ const handleDelete = async () => {
   return (
     <div className="card" style={{ borderLeft: `5px solid ${color}` }}>
       <div className="card-header">
-        <span className="badge" style={{ background: color }}>
-          {emoji} {notice.category}
-        </span>
-        {canDelete && (
-          <button className="btn-delete" onClick={handleDelete} title="Delete notice">🗑️</button>
-        )}
+       <span className="badge" style={{ 
+  background: color, 
+  color: notice.category === 'Event' ? '#78350f' : 'white' 
+}}>
+  {emoji} {notice.category}
+</span>
       </div>
       <h3>{notice.title}</h3>
       <p>{notice.body}</p>
