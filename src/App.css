@@ -1,7 +1,7 @@
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
 body {
-  font-family: 'Segoe UI', sans-serif;
+  font-family: 'Nunito', sans-serif;
   background: #f0fdf4;
   color: #1a1a1a;
   min-height: 100vh;
@@ -202,6 +202,8 @@ body {
   outline: none;
   transition: border 0.2s;
   font-family: inherit;
+  background: #fffdf0;
+  color: #1a1a1a;
 }
 .modal input:focus, .modal textarea:focus, .modal select:focus {
   border-color: #0d9488;
